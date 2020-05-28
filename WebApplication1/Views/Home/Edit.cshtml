@@ -1,0 +1,75 @@
+﻿@model WebApplication1.Models.Table
+
+@{
+    ViewBag.Title = "edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <center>
+        <h2>
+            <strong>PHARMACY MANAGEMENT SYSTEM</strong>
+        </h2>
+    </center>
+</div>
+
+<div class="=row1">
+    <div class="column1">
+        <div class="card">
+            <br><br>
+            <h4><strong>DETAILS OF SELECTED MEDICINE</strong></h4>
+            <p>________________________________</p>
+            <p><b>NAME: </b>@Model.name</p>
+            <p><b>PRICE:  </b>Rs. @Model.price /-</p>
+            <p><b>CATAGORY: </b>@Model.catagory</p>
+            <p><b>DESCRIPTION: </b><br>@Model.description</p>
+            <br><br>
+        </div>
+    </div>
+</div>
+
+<h2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;~~~ EDIT MEDICINE DETAILS ~~~</h2>
+
+<form action="/Home/EditDone" method="get">
+    <table align="right">
+
+        <tr>
+            <td align="right">
+                <b>NEW NAME: </b><input type="text" name="name" value="@Model.name" required>
+            </td>
+        </tr>
+        <tr><td><br /></td></tr>
+
+        <tr>
+            <td align="right">
+                <b> NEW PRICE: </b><input type="text" name="price" value="@Model.price" required>
+            </td>
+        </tr>
+        <tr><td><br /></td></tr>
+
+        <tr>
+            <td align="right">
+                <b>
+                    NEW CATAGORY :    <input type="radio" name="catagory" value="SYRUPS" required>
+                    SYRUP        <input type="radio" name="catagory" value="TABLETS" required>
+                    TABLET       <input type="radio" name="catagory" value="INJECTIONS" required>  INJECTIONS
+                </b>
+            </td>
+        </tr>
+        <tr><td><br /></td></tr>
+
+        <tr>
+            <td align="right">
+                <b>NEW DESCRIPTION: </b><input type="text" name="description" value="@Model.description" style="height:60px; width:150px" required>
+            </td>
+        </tr>
+        <tr><td><br /></td></tr>
+
+        <tr><td></td><td><input type="submit" value="SUBMIT CHANGES" style="background: black;border: 1px solid #fff; color: white;font-size: 16px;" /></td></tr>
+    
+    </table>
+
+    <input type="hidden" name="ido" value="@Model.id" />
+
+</form>
+
+

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <center>
+        <h2><strong>PHARMACY MANAGEMENT SYSTEM</strong></h2>
+    </center>
+</div>
+
+<br>
+<center>
+    <h2>~~~~ ADD A NEW MEDICINE ~~~~</h2>
+
+    <form action="/Home/AddDone" method="get">
+        <table>
+            <tr>
+                <td align="right">
+                    <b>NAME: </b><input type="text" name="name" required>
+                </td>
+            </tr>
+            <tr><td><br /></td></tr>
+
+            <tr>
+                <td align="right">
+                    <b> PRICE: </b><input type="text" name="price" required>
+                </td>
+            </tr>
+            <tr><td><br /></td></tr>
+
+            <tr>
+                <td align="right">
+                    <b>
+                        CATAGORY : <input type="radio" name="catagory" value="SYRUPS" required>
+                        SYRUP  <input type="radio" name="catagory" value="TABLETS" required>
+                        TABLET  <input type="radio" name="catagory" value="INJECTIONS" required> INJECTIONS
+                    </b>
+                </td>
+            </tr>
+            <tr><td><br /></td></tr>
+
+            <tr>
+                <td align="right">
+                    <b>DESCRIPTION: </b><input type="text" name="description" style="height:60px; width:150px" required>
+                </td>
+            </tr>
+            <tr><td><br /></td></tr>
+
+            <tr><td></td><td><input type="submit" value="ADD MEDICINE" style="background: black;border: 1px solid #fff; color: white;font-size: 16px;" /></td></tr>
+        </table>
+    </form>
+</center>

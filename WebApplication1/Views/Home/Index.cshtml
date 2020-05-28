@@ -1,0 +1,46 @@
+﻿@model List<WebApplication1.Models.Table>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <center>
+        <h2>
+            <strong>PHARMACY MANAGEMENT SYSTEM</strong>
+        </h2>
+    </center>
+</div>
+
+<center>
+    <h2>CHOOSE A CATAGORY</h2></center>
+<br>
+
+@foreach (var m in Model)
+{
+    <div class="=row1">
+        <div class="column1">
+            <div class="card">
+                <br>
+                <h1>@m.catagory</h1>
+                <form action="/Home/Contact" method="post">
+                    <input type="hidden" name="id" value="@m.id" />
+                    <input type="hidden" name="cat" value="@m.catagory" />
+                    <input type="submit" value="VIEW MORE......" style="width: 150px; height: 50px;background: black;border: 1px solid #fff; color: white;font-size: 16px;" />
+                </form>
+                <br><br>
+            </div>
+        </div>
+    </div>
+}
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<div>
+
+    <center>
+         <form action="/Home/Add" method="get">
+             <input type="submit" value="ADD A NEW MEDICINE" style="width: 200px; height: 100px;background: black;border: 1px solid #fff; color: white;font-size: 16px;" />
+         </form>
+    </center>
+</div>
